@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+           #forma{
+                background-color: brown;
+                width: 60%;
+                margin-left: 20%;
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                
+            }
+            form {border: 3px solid #f1f1f1;}
+            
+            input[type=text], input[type=password] {
+              width: 100%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              box-sizing: border-box;
+            }
+            
+            button {
+              background-color: #4CAF50;
+              color: white;
+              padding: 14px 20px;
+              margin: 8px 0;
+              border: none;
+              cursor: pointer;
+              width: 100%;
+            }
+            
+            button:hover {
+              opacity: 0.8;
+            }
+            
+            
+            
+            .imgcontainer {
+              text-align: center;
+              margin: 24px 0 12px 0;
+            }
+            
+            img.avatar {
+              width: 40%;
+              border-radius: 50%;
+            }
+            
+            .container {
+              padding: 16px;
+            }
+            
+            #banner video {
+    -moz-transform: translateX(50%) translateY(50%);
+    -webkit-transform: translateX(50%) translateY(50%);
+    -ms-transform: translateX(50%) translateY(50%);
+    transform: translateX(50%) translateY(50%);
+    bottom: 50%;
+    height: auto;
+    min-height: 100%;
+    min-width: 100%;
+    overflow: hidden;
+    position: absolute;
+    right: 50%;
+    width: auto; }
+
+    #banner:after {
+    background: linear-gradient(135deg, #ce1b28 0%, #111111 74%);
+    content: ' ';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    webkit-linear-gradientidth: 100%;
+    width: 100%;
+    z-index: 1; }
+
+    #banner > #forma {
+    -moz-transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    -ms-transform: scale(1.0);
+    transform: scale(1.0);
+    -moz-transition: opacity 1s ease, -moz-transform 1s ease;
+    -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+    -ms-transition: opacity 1s ease, -ms-transform 1s ease;
+    transition: opacity 1s ease, transform 1s ease;
+    opacity: 1;
+    position: relative;
+    z-index: 3; }
+            </style>
+</head>
+<body>
+    <section id="banner">
+            <div id='forma'>
+                    <h2> Formular </h2>    
+    
+            <form id="forma" onsubmit="return provera()">
+                    <p id="greska" style="color: red"></p>
+              <div class="imgcontainer">
+                <img src="img/alien.png" alt="Avatar" class="avatar">
+              </div>
+              
+              <fieldset>
+                    <legend> Login info </legend>
+                    <label for="korisnickoIme">Korisnicko ime</label>
+                    <br>
+                    <input type="text" placeholder="Korisnicko ime" id="korisnickoIme" name="ime">
+                    <br>
+                    <br>
+                    <label for="lozinka">Lozinka</label>
+                    <br>
+                    <input type="password" name="pass" placeholder="Lozinka" id="lozinka">
+                    <br>    
+                </fieldset>
+                <br>
+                <br>
+                
+                <button type="submit">Uloguj se</button>
+                
+            </form>
+            
+           </div>
+    <video autoplay loop muted playsinline src="img/mars.mp4"></video>
+</section>
+        
+        
+
+        <script>
+                function validacija(){
+                        //pretpostavimo da je forma validna
+                        var formaValidna = true; 
+        
+                        if(formaValidna){
+                            return true;
+                        }else{
+                            return false;
+                        }
+                    }
+                    
+        
+                    //ODAVDE POCINJE VALIDACIJA FORME
+                    var formular = document.getElementById('forma');
+                    var greska = document.getElementById('greska');
+                    
+                    function provera()
+                    {
+                    var korisnickoIme = document.getElementById('korisnickoIme').value;
+                    var lozinka = document.getElementById('lozinka').value;
+                    localStorage.setItem(korisnickoIme, lozinka);
+                    return uneto_korisnicko_ime() && ispravna_lozinka();
+                        
+                    }
+        
+                    function uneto_korisnicko_ime()
+                    {
+                        var korisnickoIme = document.getElementById('korisnickoIme').value;
+        
+                        if(korisnickoIme.trim().length == 0)
+                        {
+                            greska.innerHTML = "Nije uneto korisnicko ime";
+                            return false;
+                        }
+        
+                        return true;
+                        
+                    }
+        
+                    function ispravna_lozinka()
+                    {
+                        var lozinka = document.getElementById('lozinka').value.trim();
+                        
+
+                        if(lozinka.length < 8)
+                        {
+                            greska.innerHTML = "Neispravna duzina lozinke";
+                            return false;
+                        }
+        
+                        var broj_cifara = 0;
+                        var broj_velikih_slova = 0;
+                        var broj_malih_slova = 0;
+                        var broj_ostalih_karaktera = 0;
+        
+                        for(var i = 0; i < lozinka.length; i++)
+                        {
+                            var karakter = lozinka.charAt(i);
+        
+                            if(cifra(karakter))
+                                broj_cifara++;
+                            else if(malo_slovo(karakter))
+                                broj_malih_slova++;
+                            else if(veliko_slovo(karakter))
+                                broj_velikih_slova++;
+                            else
+                                broj_ostalih_karaktera++;
+                        }
+        
+                        if(broj_cifara == 0)
+                        {
+                            greska.innerHTML = "Lozinka mora sadrzati bar jednu cifru";
+                            return false;
+                        }
+        
+                        if(broj_malih_slova < 2)
+                        {
+                            greska.innerHTML = "Lozinka mora sadrzati bar dva mala slova";
+                            return false;
+                        }
+        
+                        if(broj_velikih_slova == 0)
+                        {
+                            greska.innerHTML = "Lozinka mora sadrati bar jedno veliko slovo";
+                            return false;
+                        }
+        
+                        return true;
+                    }
+        
+                    function cifra(karakter)
+                    {
+                        if(karakter >= '0' && karakter <= '9')
+                            return true;
+        
+                        return false;
+                    }
+        
+                    function malo_slovo(karakter)
+                    {
+                        if(karakter >= 'a' && karakter <= 'z')
+                            return true;
+        
+                        return false;
+                    }
+        
+                    function veliko_slovo(karakter)
+                    {
+                        if(karakter >= 'A' && karakter <= 'Z')
+                            return true;
+        
+                        return false;
+                    }
+                    
+                    
+                    
+                </script>
+                
+</body>
+</html>
