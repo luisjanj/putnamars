@@ -12,7 +12,7 @@ h1,h2,h3,h5,
 .content-blog p {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: "Cambo", "Times New Roman", serif;
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 h1 a,h2 a,h3 a,h5 a,
 .content-blog p a {
@@ -51,6 +51,10 @@ p {
   line-height: 1.6em;
   font-weight: 400;
   margin: 0 0 .75em;
+}
+.title-modern {
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
 }
 .separator {
   color: #c5a47e;
