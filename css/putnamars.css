@@ -12,7 +12,7 @@ h1,h2,h3,h5,
 .content-blog p {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Cambo", "Times New Roman", serif;
 }
 h1 a,h2 a,h3 a,h5 a,
 .content-blog p a {
@@ -51,10 +51,6 @@ p {
   line-height: 1.6em;
   font-weight: 400;
   margin: 0 0 .75em;
-}
-.title-modern {
-  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 200;
 }
 .separator {
   color: #c5a47e;
@@ -121,15 +117,6 @@ p.description {
   border-color: #888888;
   color: #888888;
   text-transform: uppercase;
-}
-.btn.btn-fill:hover, .btn.btn-fill:focus, .btn.btn-fill:active, .btn.btn-fill.active, .open > .btn.btn-fill.dropdown-toggle,
-.navbar .navbar-nav > li > a.btn.btn-fill:hover,
-.navbar .navbar-nav > li > a.btn.btn-fill:focus,
-.navbar .navbar-nav > li > a.btn.btn-fill:active,
-.navbar .navbar-nav > li > a.btn.btn-fill.active, .open >
-.navbar .navbar-nav > li > a.btn.btn-fill.dropdown-toggle {
-  background-color: #777777;
-  color: #FFFFFF;
 }
 .btn-danger,
 .navbar .navbar-nav > li > a.btn-danger {
@@ -305,13 +292,7 @@ p.description {
 .card-member .content {
   padding: 25px;
 }
-.section-header,
-.section-header-blog,
-.section-presentation-page {
-  padding: 0;
-}
 .section-header .container,
-.section-header-blog .container,
 .section-presentation-page .container {
   z-index: 3;
   position: absolute;
@@ -336,7 +317,6 @@ p.description {
   transform: translateY(-50%);
 }
 .section-header p,
-.section-header-blog p,
 .section-presentation-page p {
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -352,13 +332,7 @@ p.description {
   position: absolute;
   display: block;
 }
-.section-get-started,
-.section-header-freebie,
-.section-our-team-freebie {
-  padding-bottom: 0;
-}
 .section-get-started .container,
-.section-header-freebie .container,
 .section-our-team-freebie .container {
   position: relative;
   z-index: 100;
@@ -367,23 +341,19 @@ p.description {
   text-align: center;
 }
 .section-get-started .parallax,
-.section-get-started .static-image,
-.section-header-freebie .parallax,
-.section-header-freebie .static-image,
-.section-our-team-freebie .parallax,
-.section-our-team-freebie .static-image {
+.section-our-team-freebie .static-image{
   height: auto;
 }
 .section-get-started .container {
   margin: 15vh auto;
 }
 .section-our-clients-freebie .nav-text,
-.section-our-clients .nav-text {
+.section-our-clients .nav-text{
   margin: 30px auto;
   text-align: center;
 }
 .section-our-clients-freebie .tab-content,
-.section-our-clients .tab-content {
+.section-our-clients .tab-content{
   text-align: center;
   max-width: 760px;
   min-height: 130px;
