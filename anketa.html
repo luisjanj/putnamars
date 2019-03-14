@@ -2,44 +2,61 @@
 <html lang="sr">
 <head>
     <meta charset="utf-8">
-    <title>Anketa</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/anketa.css" rel="stylesheet" />
     <script src="js/anketa.js"></script>
     
 </head>
 <body>
+    
         <section id="banner">
-        <form id="myform" onsubmit="return provera()">
-                <p id="greska" style="color: red"></p>
-                <h2>Anketa</h2>
-                <h4>Da li ste zainteresovani za putovanje na mars?</h4>
-                <input id="pitanje1" type="text" name="pitanje1" placeholder=""/>
-                <br>
-                <br>
-                <h4>Kolika je udaljenost zemlje od marsa?</h4>
-                <input id="pitanje2" type="text" name="pitanje2" placeholder=""/>
-                <br>
-                <br>
-                <h4>Koliko novca ste spremni da izdvojite za putovanje?</h4>
-                <input id="pitanje3" type="text" name="pitanje3" placeholder=""/>
-                <br>
-                <br>
-                <h4>Da li postoji voda na marsu?</h4>
-                <input id="pitanje4" type="text" name="pitanje4" placeholder=""/>
-                <br>
-                <br>
-                <h4>Da li smatrate da ima zivota na marsu?</h4>
-                <input id="pitanje5" type="text" name="pitanje5" placeholder=""/>
-                <br>
-                <br>
-                <button type="submit">Posalji</button>
-            </form>
-                    
-            <h2>Odgovori:</h2>
-            <ul id="pitanja"></ul>
-            <video autoplay loop muted playsinline src="img/mars.mp4"></video>
+                <form id="myform" onsubmit="return dodajPitanja()">
+                        <h2>Anketa</h2>
+                        <h4>Da li ste zainteresovani za putovanje na mars?</h4>
+                        <input id="pitanje1" type="text" name="pitanje1" placeholder=""/>
+                        <br>
+                        <br>
+                        <h4>Kolika je udaljenost zemlje od marsa?</h4>
+                        <input id="pitanje2" type="text" name="pitanje2" placeholder=""/>
+                        <br>
+                        <br>
+                        <h4>Koliko novca ste spremni da izdvojite za putovanje?</h4>
+                        <input id="pitanje3" type="text" name="pitanje3" placeholder=""/>
+                        <br>
+                        <br>
+                        <h4>Da li postoji voda na marsu?</h4>
+                        <input id="pitanje4" type="text" name="pitanje4" placeholder=""/>
+                        <br>
+                        <br>
+                        <h4>Da li smatrate da ima zivota na marsu?</h4>
+                        <input id="pitanje5" type="text" name="pitanje5" placeholder=""/>
+                        <br>
+                        <br>
+                        <button type="submit">Posalji</button>
+                        <h2>Odgovori:</h2>
+                    <ul id="pitanja"></ul>
+                    </form>
+                    <video autoplay loop muted playsinline src="img/mars.mp4"></video>
+            
         </section>
     
+        <script>
     
+                var list = document.getElementById('pitanja');
+                
+                function dodajPitanja(){
+                var pitanje1 = document.getElementById('pitanje1').value;
+                var pitanje2 = document.getElementById('pitanje2').value;
+                var pitanje3 = document.getElementById('pitanje3').value;
+                var pitanje4 = document.getElementById('pitanje4').value;
+                var pitanje5 = document.getElementById('pitanje5').value;
+                var entry = document.createElement('li');
+                entry.appendChild(document.createTextNode(pitanje1 + ' ' + pitanje2 + ' ' + pitanje3 + ' ' + pitanje4 + ' ' + pitanje5));
+                list.appendChild(entry);
+               return false;
+               }
+                </script>
 </body>
 </html>
