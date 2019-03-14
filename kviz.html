@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kviz</title>
+    <link rel="stylesheet" href="css/kviz.css">
+</head>
+<body>
+        <section>
+    <div id="container">
+        <div id="start">Start Kviza</div>
+        <div id="kviz" style="display: none">
+            <div id="pitanje"></div>
+            <div id="qImg"></div>
+            <div id="izabrano">
+                <div class="izbor" id="A" onclick="proveraOdgovora('A')"></div>
+                <div class="izbor" id="B" onclick="proveraOdgovora('B')"></div>
+                <div class="izbor" id="C" onclick="proveraOdgovora('C')"></div>
+                <div class="izbor" id="D" onclick="proveraOdgovora('D')"></div>
+            </div>
+            <div id="tajmer">
+                <div id="brojac"></div>
+                <div id="prvi"></div>
+                <div id="drugi"></div>
+            </div>
+            <div id="progres"></div>
+        </div>
+        <div id="rezultat" style="display: none"></div>
+        
+    </div>
+    <video autoplay loop muted playsinline src="img/mars.mp4"></video>
+</section>
+    <script src="js/kviz.js"></script>
+</body>
+</html>

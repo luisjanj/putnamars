@@ -1,0 +1,65 @@
+aside{
+            width: 40%;
+            margin-left: 40%;
+        }
+        .dugme{
+            background-color: brown;
+            color:white;
+            text-align: center;
+            display: inline-block;
+            padding: 10px;
+        }
+        .dugme:hover {
+        animation-name: dugmad;
+        animation-duration: 5s;
+        text-decoration:none;
+        }
+       @keyframes dugmad {
+	    from {background-color: yellow;}
+	   to {background-color: red;}
+       }
+        
+        .hidden{
+            display: none;
+        }
+        .shown{
+            background-color: brown;
+        }
+        #banner video {
+    -moz-transform: translateX(50%) translateY(50%);
+    -webkit-transform: translateX(50%) translateY(50%);
+    -ms-transform: translateX(50%) translateY(50%);
+    transform: translateX(50%) translateY(50%);
+    bottom: 50%;
+    height: auto;
+    min-height: 100%;
+    min-width: 100%;
+    overflow: hidden;
+    position: absolute;
+    right: 50%;
+    width: auto; }
+
+    #banner:after {
+    background: linear-gradient(135deg, #ce1b28 0%, #111111 74%);
+    content: ' ';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1; }
+
+    #banner > aside {
+    -moz-transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    -ms-transform: scale(1.0);
+    transform: scale(1.0);
+    -moz-transition: opacity 1s ease, -moz-transform 1s ease;
+    -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+    -ms-transition: opacity 1s ease, -ms-transform 1s ease;
+    transition: opacity 1s ease, transform 1s ease;
+    opacity: 1;
+    position: relative;
+    z-index: 3; }
