@@ -1,4 +1,4 @@
-# putnamars
+# put na mars
 This is my final project for the front end course during february 2019
 
 -osnovni html
@@ -17,7 +17,7 @@ This is my final project for the front end course during february 2019
 
 -rezervacija leta
 
--simulcija marsa
+-simulacija marsa
 
 -ubacivanje css fajlova
 
