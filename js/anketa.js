@@ -10,7 +10,7 @@ localStorage.setItem("Kolika je udaljenost zemlje od marsa?", pitanje2);
 localStorage.setItem("Koliko novca ste spremni da izdvojite za putovanje?", pitanje3);
 localStorage.setItem("Da li postoji voda na marsu?", pitanje4);
 localStorage.setItem("Da li smatrate da ima zivota na marsu?", pitanje5);
-return  uneto_pitanje1() && uneto_pitanje2();   
+return  uneto_pitanje1();   
 }
 
 function uneto_pitanje1()
